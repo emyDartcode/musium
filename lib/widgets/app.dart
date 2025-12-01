@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:musium/core/providers.dart';
 import 'package:musium/core/theme.dart';
-import 'package:musium/feature/dashboard/presentation/dashboard.dart';
+import 'package:musium/features/dashboard/dashboard.dart';
 
 class App extends ConsumerWidget {
   const App({super.key});

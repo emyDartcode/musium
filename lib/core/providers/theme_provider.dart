@@ -12,7 +12,7 @@ class ThemeModeProvider extends AsyncNotifier<ThemeMode>{
   //Get Theme
   Future<void> getTheme() async{
     final sharedPref = await SharedPreferences.getInstance();
-    final themeMode = sharedPref.getBool('themeMode');
+    final themeMode = sharedPref.getBool('themeMde');
 
     switch(themeMode){
       case true:

@@ -21,10 +21,15 @@ class SlantedRectangle extends StatelessWidget {
     return Transform.rotate(
       angle: angle, // Positive value rotates clockwise
       child: Container(
+        decoration: BoxDecoration(
+          borderRadius: const BorderRadius.all(Radius.circular(10)), 
+          color: color
+        ),
         width: width,
         height: height,
-        color: color,
-        child: child,
+        child: Center(
+          child: child
+        ),
       ),
     );
   }

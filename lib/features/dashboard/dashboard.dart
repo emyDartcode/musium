@@ -18,12 +18,15 @@ class _DashboardState extends State<Dashboard> {
       child: Scaffold(
 
         body: const SafeArea(
-          child: TabBarView(
-            children: [
-              HomePage(),
-              ExploreTab(),
-              Center(child: Text("Library"))
-            ]
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15),
+            child: TabBarView(
+              children: [
+                HomePage(),
+                ExploreTab(),
+                Center(child: Text("Library"))
+              ]
+            ),
           ),
         ),
 

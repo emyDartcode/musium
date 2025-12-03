@@ -11,19 +11,19 @@ class CacheImage extends StatelessWidget {
   });
   final ValueKey? cacheKey;
   final String imageUrl;
-  final double height;
-  final double width;
+  final double? height;
+  final double? width;
 
   @override
   Widget build(BuildContext context) {
-    final pixelRatio = MediaQuery.of(context).devicePixelRatio;
+    // final pixelRatio = MediaQuery.of(context).devicePixelRatio;
     return CachedNetworkImage(
       key: cacheKey,
       imageUrl: imageUrl,
       height: height,
       width: width,
-      memCacheHeight: (height * pixelRatio * 1.5).round(),
-      memCacheWidth: (width * pixelRatio * 1.5).round(),
+      memCacheHeight: 600, //(height * pixelRatio * 1.5).round(),
+      memCacheWidth: 600, //(width * pixelRatio * 1.5).round(),
       maxWidthDiskCache: 400,
       fadeInDuration: const Duration(milliseconds: 300),
       errorWidget: (context, url, error) => const Icon(

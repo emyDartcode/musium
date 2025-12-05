@@ -1,6 +1,7 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:musium/features/library/presentation/widgets/folder.dart';
+import 'package:musium/features/library/presentation/widgets/playlist.dart';
 
 class LibraryTab extends StatefulWidget {
   const LibraryTab({super.key});
@@ -33,7 +34,8 @@ class _LibraryTabState extends State<LibraryTab> with AutomaticKeepAliveClientMi
 
     return CustomScrollView(
       slivers: [
-
+        
+        //App bar
         SliverAppBar(
           pinned: true,
           elevation: 0,
@@ -81,7 +83,8 @@ class _LibraryTabState extends State<LibraryTab> with AutomaticKeepAliveClientMi
           )
     
         ),
-    
+
+        //Tab bar view
         SliverToBoxAdapter(
           child: SizedBox(
             height: height - 30,
@@ -90,7 +93,7 @@ class _LibraryTabState extends State<LibraryTab> with AutomaticKeepAliveClientMi
                 controller: tabController,
                 children: const [
                   FolderWidget(),
-                  Text("Playlist"),
+                  PlaylistWidget(),
                   Text("Artist"),
                   Text("Album"),
                   Text("Favourite")

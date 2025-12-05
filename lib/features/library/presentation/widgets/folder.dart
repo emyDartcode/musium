@@ -29,10 +29,11 @@ class FolderWidget extends ConsumerWidget {
           if(reader.isLoading && !reader.hasValue)
             const FolderShimmer(),
           
+          //Error widget
           if(reader.hasError && !reader.hasValue)
             const Align(
               alignment: Alignment.center,
-              child: FolderWhenError()
+              child: FolderWhenEmpty()
             ),
           
         ],
@@ -89,56 +90,58 @@ class FolderWhenData extends StatelessWidget {
         ),
                 
         //Folder builder
-        SliverList.builder(
-          itemCount: data.length,
-          itemBuilder: (context, index){
-            return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              child: InkWell(
-                onTap:() {
-                  
-                },
+        data.isEmpty
+        ? const FolderWhenEmpty()
+        : SliverList.builder(
+            itemCount: data.length,
+            itemBuilder: (context, index){
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: InkWell(
+                  onTap:() {
+                    
+                  },
 
-                child: Row(
-                  children: [
+                  child: Row(
+                    children: [
 
-                    //Folder 
-                    const Icon(
-                      Icons.folder,
-                      size: 50,
-                      color: Color.fromARGB(255, 254, 231, 148)
-                    ),
-                    const SizedBox(width: 20),
-                
-                    SizedBox(
-                      width: width * 0.66,
-                      child: Column(
-                        crossAxisAlignment: .start,
-                        children: [
-                                      
-                          //Folder name
-                          Text(
-                            data[index].name
-                          ),
-                                      
-                          //Number of playlist
-                          Text(
-                            "${data[index].numOfPlaylist} playlists",
-                      
-                            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                              fontWeight: .w400,
-                              color: Theme.of(context).colorScheme.onSurface.withAlpha(200)
-                            ),
-                          )
-                        ],
+                      //Folder 
+                      const Icon(
+                        Icons.folder,
+                        size: 50,
+                        color: Color.fromARGB(255, 254, 231, 148)
                       ),
-                    )
-                  ],
+                      const SizedBox(width: 20),
+                  
+                      SizedBox(
+                        width: width * 0.66,
+                        child: Column(
+                          crossAxisAlignment: .start,
+                          children: [
+                                        
+                            //Folder name
+                            Text(
+                              data[index].name
+                            ),
+                                        
+                            //Number of playlist
+                            Text(
+                              "${data[index].numOfPlaylist} playlists",
+                        
+                              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                fontWeight: .w400,
+                                color: Theme.of(context).colorScheme.onSurface.withAlpha(200)
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-              ),
-            );
-          }
-        )
+              );
+            }
+          )
       ],
     );
   }
@@ -251,27 +254,32 @@ class FolderShimmer extends StatelessWidget {
 }
 
 //Widget when error
-class FolderWhenError extends StatelessWidget {
-  const FolderWhenError({super.key});
+class FolderWhenEmpty extends StatelessWidget {
+  const FolderWhenEmpty ({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisSize: .min,
-        children: [
-          Icon(
-            Icons.folder_off_outlined,
-            size: 70,
-            color: Theme.of(context).colorScheme.onSurface.withAlpha(160)
+    return SliverToBoxAdapter(
+      child: SizedBox(
+        height: 500,
+        child: Center(
+          child: Column(
+            mainAxisSize: .min,
+            children: [
+              Icon(
+                Icons.folder_off_outlined,
+                size: 70,
+                color: Theme.of(context).colorScheme.onSurface.withAlpha(160)
+              ),
+              Text(
+                "No playlist folder",
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface.withAlpha(160)
+                )
+              ),
+            ],
           ),
-          Text(
-            "No playlist folder",
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              color: Theme.of(context).colorScheme.onSurface.withAlpha(160)
-            )
-          ),
-        ],
+        ),
       ),
     );
   }

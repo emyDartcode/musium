@@ -22,6 +22,7 @@ class LibraryRow extends StatelessWidget {
         spacing: 20,
         children: [
           Container(
+            alignment: Alignment.center,
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               shape: BoxShape.circle,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:musium/core/color.dart';
-import 'package:musium/features/explore/presentation/provider/provider.dart';
+// import 'package:musium/features/explore/presentation/provider/provider.dart';
 
 class SearchExplore extends ConsumerStatefulWidget {
   const SearchExplore({super.key});
@@ -29,9 +29,9 @@ class _SearchStateExplore extends ConsumerState<SearchExplore> {
 
   @override
   Widget build(BuildContext context) {
-    final searchInput = ref.watch(searchInputProvider);
+    // final searchInput = ref.watch(searchInputProvider);
     
-    final searchUiProvider = ref.watch(searchProvider(searchInput));
+    // final searchUiProvider = ref.watch(searchProvider(searchInput));
 
 
     return TextField(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:musium/core/color.dart';
 import 'package:musium/features/explore/presentation/explore.dart';
 import 'package:musium/features/home/presentation/home.dart';
+import 'package:musium/features/library/presentation/library.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -22,9 +23,9 @@ class _DashboardState extends State<Dashboard> {
             padding: EdgeInsets.symmetric(horizontal: 15),
             child: TabBarView(
               children: [
-                HomePage(),
+                HomeTab(),
                 ExploreTab(),
-                Center(child: Text("Library"))
+                LibraryTab()
               ]
             ),
           ),

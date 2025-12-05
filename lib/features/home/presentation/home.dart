@@ -4,11 +4,17 @@ import 'package:musium/features/home/presentation/widgets/recent.dart';
 import 'package:musium/features/home/presentation/widgets/top_mix.dart';
 import 'package:musium/widgets/appbars.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomeTab extends StatefulWidget{
+  const HomeTab({super.key});
 
   @override
+  State<HomeTab> createState() => _HomeTabState();
+}
+
+class _HomeTabState extends State<HomeTab> with AutomaticKeepAliveClientMixin{
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     // final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
 
@@ -78,8 +84,9 @@ class HomePage extends StatelessWidget {
       )
     );
   }
-
   
+  @override
+  bool get wantKeepAlive => true;
 }
 
 //height Space

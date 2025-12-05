@@ -27,6 +27,7 @@ class BrowseAllGrid extends ConsumerWidget {
 
   Widget dataBuilder(List<TopGenres> value){
    return GridView.builder(
+      cacheExtent: 1000,
       itemCount: value.length,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,

@@ -4,16 +4,23 @@ import 'package:musium/features/explore/presentation/wigets/search.dart';
 import 'package:musium/features/explore/presentation/wigets/top_genres.dart';
 import 'package:musium/features/home/presentation/home.dart';
 
-class ExploreTab extends StatelessWidget {
+class ExploreTab extends StatefulWidget {
   const ExploreTab({super.key});
 
   @override
+  State<ExploreTab> createState() => _ExploreTabState();
+}
+
+class _ExploreTabState extends State<ExploreTab> with AutomaticKeepAliveClientMixin {
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
+    
     return CustomScrollView(
       cacheExtent: 1000,
     
       slivers: [
-        SliverAppBar(
+        const SliverAppBar(
           
         ),
 
@@ -67,4 +74,7 @@ class ExploreTab extends StatelessWidget {
       ],
     );
   }
+  
+  @override
+  bool get wantKeepAlive => true;
 }

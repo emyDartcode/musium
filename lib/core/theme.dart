@@ -94,7 +94,7 @@ OutlinedButtonThemeData outlinedButtonTheme(Color color) {
       textStyle: const WidgetStatePropertyAll(
         TextStyle(
           // fontFamily: '',
-          fontSize: 10,
+          fontSize: 12,
           fontWeight: .w600,
         )
       ),

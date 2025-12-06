@@ -47,7 +47,67 @@ class LibraryDataSource {
         await Future.delayed(const Duration(seconds: 3),
           (){
             return [
-              
+              ArtistEntity(
+                imageUrl: 'https://picsum.photos/300?1',
+                artist: 'Ariana Bloom',
+                numOfSongs: 323432,
+                numOfAlbum: 3243243,
+              ),
+              ArtistEntity(
+                imageUrl: 'https://picsum.photos/300?2',
+                artist: 'Neo Carter',
+                numOfSongs: 18,
+                numOfAlbum: 2,
+              ),
+              ArtistEntity(
+                imageUrl: 'https://picsum.photos/300?3',
+                artist: 'Luna Waves',
+                numOfSongs: 25,
+                numOfAlbum: 4,
+              ),
+              ArtistEntity(
+                imageUrl: 'https://picsum.photos/300?4',
+                artist: 'Zion Blaze',
+                numOfSongs: 40,
+                numOfAlbum: 5,
+              ),
+              ArtistEntity(
+                imageUrl: 'https://picsum.photos/300?5',
+                artist: 'Mira Solis',
+                numOfSongs: 27,
+                numOfAlbum: 3,
+              ),
+              ArtistEntity(
+                imageUrl: 'https://picsum.photos/300?6',
+                artist: 'Dray Monarch',
+                numOfSongs: 14,
+                numOfAlbum: 1,
+              ),
+              ArtistEntity(
+                imageUrl: 'https://picsum.photos/300?7',
+                artist: 'Kyra Velvet',
+                numOfSongs: 22,
+                numOfAlbum: 2,
+              ),
+              ArtistEntity(
+                imageUrl: 'https://picsum.photos/300?8',
+                artist: 'Rex Orion',
+                numOfSongs: 35,
+                numOfAlbum: 4,
+              ),
+              ArtistEntity(
+                imageUrl: 'https://picsum.photos/300?9',
+                artist: 'Selah Ray',
+                numOfSongs: 19,
+                numOfAlbum: 2,
+              ),
+              ArtistEntity(
+                imageUrl: 'https://picsum.photos/300?10',
+                artist: 'Juno Shade',
+                numOfSongs: 29,
+                numOfAlbum: 3,
+              ),
+
             ];
           }
         )
@@ -61,7 +121,7 @@ class LibraryDataSource {
   Future<Either<ErrorMessage,List<AlbumEntity>>> getAlbums() async{
     try{
       return Right(
-        await Future.delayed(const Duration(seconds: 3),
+        await Future.delayed(const Duration(seconds: 2),
           (){
             return [
               

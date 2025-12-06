@@ -49,16 +49,6 @@ class TopGenresGrids extends ConsumerWidget {
             child: Stack(
               children: [
           
-                //Title
-                Positioned(
-                  top: 15,
-                  left: 15,
-                  child: Text(
-                    value[index].type,
-                    style: Theme.of(context).textTheme.bodyLarge
-                  )
-                ),
-          
                 //Image
                 Positioned(
                   bottom: -20,
@@ -77,6 +67,16 @@ class TopGenresGrids extends ConsumerWidget {
                       ),
                     ),
                   ),
+                ),
+                
+                //Title
+                Positioned(
+                  top: 15,
+                  left: 15,
+                  child: Text(
+                    value[index].type,
+                    style: Theme.of(context).textTheme.bodyLarge
+                  )
                 ),
               ],
             )

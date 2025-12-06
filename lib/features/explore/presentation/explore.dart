@@ -14,6 +14,8 @@ class ExploreTab extends StatefulWidget {
 class _ExploreTabState extends State<ExploreTab> with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+
     super.build(context);
     
     return CustomScrollView(
@@ -61,11 +63,13 @@ class _ExploreTabState extends State<ExploreTab> with AutomaticKeepAliveClientMi
             style: Theme.of(context).textTheme.bodyLarge
           )
         ),
+
+        heightSpace(10),
     
-        const SliverToBoxAdapter(
+        SliverToBoxAdapter(
           child: SizedBox(
-            height:400,
-            child: BrowseAllGrid()
+            height:height * 0.6,
+            child: const BrowseAllGrid()
           )
         )
     

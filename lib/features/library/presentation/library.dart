@@ -1,5 +1,7 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
+import 'package:musium/core/color.dart';
+import 'package:musium/features/library/presentation/widgets/artist.dart';
 import 'package:musium/features/library/presentation/widgets/folder.dart';
 import 'package:musium/features/library/presentation/widgets/playlist.dart';
 
@@ -45,7 +47,7 @@ class _LibraryTabState extends State<LibraryTab> with AutomaticKeepAliveClientMi
           // surfaceTintColor: Colors.transparent,
           flexibleSpace: ButtonsTabBar(
             controller: tabController,
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColor.primaryColor,
             unselectedBackgroundColor: Colors.transparent,
             contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 0),
             height: 40,
@@ -94,7 +96,7 @@ class _LibraryTabState extends State<LibraryTab> with AutomaticKeepAliveClientMi
                 children: const [
                   FolderWidget(),
                   PlaylistWidget(),
-                  Text("Artist"),
+                  ArtistWidget(),
                   Text("Album"),
                   Text("Favourite")
                 ]
